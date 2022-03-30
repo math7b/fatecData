@@ -1,0 +1,28 @@
+{
+    "cidades": {
+        "favoritas": [
+
+    
+	{ 
+		"cidade": "Nova York",
+		"descricao": "Nova Iorque ou Nova York, e' a cidade mais populosa dos Estados Unidos e o centro da Area Metropolitana de Nova Iorque, uma das cidades mais populosas do mundo",
+		"imagem": "01.jpg"       },
+		
+	{ 
+		"cidade": "Toronto",
+		"descricao": "Toronto e' a maior cidade e maior centro financeiro do Canada'",
+		"imagem": "02.jpg"       },
+	
+	{ 
+		"cidade": "Berlim",
+		"descricao": "Capital e um dos dezesseis estados da Alemanha. Com 3,5 milhoes de pessoas dentro de limites da cidade, ",
+		"imagem": "03.jpg"       },
+	
+	{ 
+		"cidade": "Nova Delhi",
+		"descricao": "Nova Deli, Nova Delhi e' a capital da India. Com 42,7 km quadrados, Nova Deli situa-se dentro do conjunto metropolitado de Deli, e atualmente serve como sede do Governo da India",
+		"imagem": "04.jpg"       }
+		
+		] 
+	}
+}
