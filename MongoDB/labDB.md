@@ -1,3 +1,4 @@
+## 25/04/2022
 ```
 use('labBD')
 
@@ -163,4 +164,97 @@ db.pessoas.drop()
 
 db.dropDatabase()
 
+```
+## 02/05/2022
+```
+use('labDB')
+db.estados.insertMany([
+    {
+        "codigo_uf": 11,
+        "uf": "RO",
+        "nome": "Rondônia",
+        "latitude": -10.83,
+        "longitude": -63.34
+    }
+])
+
+use('labDB')
+db.municipios.insertMany([
+	{
+		"codigo_ibge" : 5200050,
+		"nome" : "Abadia de Goiás",
+		"latitude" : -16.7573,
+		"longitude" : -49.4412,
+		"capital" : false,
+		"codigo_uf" : 52
+	}
+])
+
+use('labDB')
+db.municipios.find().count()
+
+use('labDB')
+db.municipios.find({
+    capital: true
+}, {
+    nome: 1,
+    codigo_uf: 1,
+    capital: 1,
+    _id: 0
+}).sort({
+    codigo_uf: 1,
+    nome: -1
+})
+
+use('labDB')
+db.municipios.find({
+    nome: /tu/i // i like insensitive case
+}, {
+    nome: 1,
+    _id: 0
+})
+
+use('labDB')
+db.municipios.find({
+    nome: /^tu/i // tu in the start
+}, {
+    nome: 1,
+    _id: 0
+})
+
+use('labDB')
+db.municipios.find({
+    nome: /tu$/i // tu in the end
+}, {
+    nome: 1,
+    _id: 0
+})
+
+use('labDB')
+db.municipios.find({
+    codigo_uf: {$gt: 30} 
+}, {
+    nome: 1,
+    codigo_uf: 1,
+    _id: 0
+}).sort({
+    codigo_uf: 1,
+    nome: 1
+}).limit(22).skip(20)
+
+use('labDB')
+db.municipios.find().limit(1)
+
+use('labDB')
+db.estados.find().limit(1)
+
+use('labDB')
+db.municipios.aggregate([{
+    $lookup: {
+        from: 'estados',
+        localField: 'codigo_uf',
+        foreignField: 'codigo_uf',
+        as: 'estado'
+    }
+}])
 ```
