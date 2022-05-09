@@ -42,7 +42,14 @@ db.restaurantes.aggregate([{
     _id: 0,
     nome: 1,
     inauguracao: 1,
+    inauguraçãopt: {
+      $dateToString: {
+        format: "%d/%m/%Y",
+        date: "$inauguracao"
+      }
+    },
     "detalhe_categoria.descricao": 1
   }
 }])
+
 ```
